@@ -1,0 +1,14 @@
+@import url("normalize.css");
+
+html {
+  box-sizing: border-box;
+  font-family: 'okuda';
+}
+
+body{
+  background-color: black;
+}
+
+header {
+  color: #fff;
+}
