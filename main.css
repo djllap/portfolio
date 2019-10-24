@@ -11,4 +11,47 @@ body{
 
 header {
   color: #fff;
+  position: fixed;
+  width: 100% - 1rem;
+  display: inline-flex;
+  flex-direction: row;
+  top: 0;
+  left: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+h1 {
+  background-color: black;
+}
+
+.elbow {
+  width: 9.5rem;
+  min-width: 9.5rem;
+  height: 4.5rem;
+  min-height: 4.5rem;
+  background-color: #f1df6f;
+  position: relative;
+}
+
+.elbow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 3rem;
+  background: black;
+}
+
+.elbow.top-left-elbow {
+  border-top-left-radius: 3.75rem;
+}
+
+.elbow.top-left-elbow:after {
+  right: 0;
+  top: 1.5rem;
+  border-top-left-radius: 1.875rem;
+}
+
+.top-bar {
+  width: 100%;
 }
