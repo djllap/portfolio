@@ -1,31 +1,57 @@
 @import url("normalize.css");
 
+@font-face {
+  font-family:"Okuda";
+  src:url("Okuda.eot?") format("eot"),
+  url("/resources/fonts/Okuda.woff") format("woff"),
+  url("/resources/fonts/Okuda.ttf") format("truetype"),
+  url("/resources/fonts/Okuda.svg#Okuda") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
+
 html {
+  font-family: 'Okuda';
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
-  font-family: 'okuda';
 }
 
 body{
   background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  color: #fff;
-  position: fixed;
-  width: 100% - 1rem;
-  display: inline-flex;
+  /* position: fixed; */
+  width: 100%;
+  display: flex;
   flex-direction: row;
-  top: 0;
-  left: 0.5rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+footer {
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 h1 {
   background-color: black;
+  color: #ff9900;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 2rem;
 }
 
 .elbow {
-  width: 9.5rem;
+  width: 10.5rem;
   min-width: 9.5rem;
   height: 4.5rem;
   min-height: 4.5rem;
@@ -48,10 +74,108 @@ h1 {
 
 .elbow.top-left-elbow:after {
   right: 0;
-  top: 1.5rem;
+  top: 2rem;
   border-top-left-radius: 1.875rem;
 }
 
-.top-bar {
-  width: 100%;
+.elbow.bottom-left-elbow {
+  border-bottom-left-radius: 3.75rem;
 }
+
+.elbow.bottom-left-elbow:after {
+  right: 0;
+  bottom: 2rem;
+  border-bottom-left-radius: 1.875rem;
+}
+
+.bar {
+  background-color: #f1df6f;
+  height: 2rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.title-block.dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #ff9900;
+  padding: 0;
+}
+
+.title-block {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.nub {
+  background-color: #f1df6f;
+  height: 2rem;
+  min-width: 2.3rem;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+  margin-left: 3px;
+}
+
+
+.nav-bar {
+  width: 9rem;
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.nav-label {
+  background-color: #f1df6f;
+  width: 100%;
+  color: black;
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1; 
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+
+}
+
+.nav-btn {
+  width: 100%;
+  border-top: 3px solid black;
+  padding: 1.8rem 0 0 0.3rem;
+  color: black;
+  font-size: 1.3rem;
+}
+
+.blue {
+  background-color: #99ccff;
+}
+
+.white {
+  background-color: #ffffcc;
+}
+
+.yellow {
+  background-color: #ffff33;
+}
+
+.red {
+  background-color: #cc6666;
+}
+
+.black {
+  background-color: black;
+}
+
+.engage {
+  font-size: 1.4rem;
+}
+
+.nav-bottom {
+  background-color: #f1df6f;
+  width: 100%;
+  flex-grow: 1; 
+  flex-basis: 5rem;
+}
+
