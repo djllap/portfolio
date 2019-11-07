@@ -21,6 +21,7 @@ html {
 body{
   background-color: black;
   min-height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
@@ -41,12 +42,26 @@ footer {
 }
 
 main {
-  flex-grow: 1;
+  flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+h1 {
+  color: #ff9900;
+  margin: 0 0 0 0.5rem;
+  text-align: right;
+  font-weight: inherit;
+  margin-top: 1.5rem;
+}
+
+p {
+  color: #ff9900;
+  font-size: 1.3rem;
 }
 
 button, button:focus{
   border: none;
-  border-top: 3px solid black;
   outline: inherit;
 }
 
@@ -105,6 +120,14 @@ button, button:focus{
   flex-shrink: 1;
 }
 
+.thin-bar {
+  background-color: #f1df6f;
+  height: 0.75rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-bottom: 1rem;
+}
+
 .title-block.dot {
   height: 0.5rem;
   width: 0.5rem;
@@ -124,6 +147,12 @@ button, button:focus{
   min-width: 1.5rem;
 }
 
+.thin-nub {
+  background-color: #f1df6f;
+  height: 0.75rem;
+  min-width: 0.75rem;
+}
+
 .right-nub {
   border-top-right-radius: 25%;
   border-bottom-right-radius: 25%;
@@ -138,7 +167,7 @@ button, button:focus{
 
 .nav-bar {
   width: 100%;
-  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   display: flex;
   flex-direction: row;
 }
@@ -185,6 +214,7 @@ button, button:focus{
 
 .engage {
   font-size: 1.4rem;
+  border: none;
 }
 
 .nav-bottom {
@@ -194,11 +224,49 @@ button, button:focus{
   flex-basis: 5rem;
 }
 
-.ui-btn {
-  background-color: #99ccff;
-  border: none;
-  border-radius: 1rem;
-  font-size: 1.4rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pic-column {
+  width: 45%;
+}
+
+.pic-column img {
+  width: 100%;
+}
+
+.bio-column {
+  padding-left: 0.75rem;
+  font-size: 1.2rem;
+  width: 55%
+}
+
+.bio-label {
+  color: #7b74ba;
+  padding-right: 0.5rem;
+}
+
+.bio-text {
+  color: #ff9900;
+}
+
+.bio-header {
+  text-align: center;
+  color: #ff9900;
+  font-size: 1.5rem;
+  width: 100%;
+  padding-bottom: 0.75rem
+}
+
+.padding-container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
