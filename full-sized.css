@@ -44,13 +44,7 @@ main {
   flex-grow: 1;
 }
 
-button, button:focus{
-  border: none;
-  border-top: 3px solid black;
-  outline: inherit;
-}
-
-.header-text {
+h1 {
   background-color: black;
   color: #ff9900;
   font-size: 1.5rem;
@@ -58,6 +52,12 @@ button, button:focus{
   align-items: center;
   margin: 0;
   height: 2rem;
+}
+
+button, button:focus{
+  border: none;
+  border-top: 3px solid black;
+  outline: inherit;
 }
 
 .elbow {
@@ -137,10 +137,11 @@ button, button:focus{
 }
 
 .nav-bar {
-  width: 100%;
-  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+  width: 9rem;
+  padding-left: 0.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex: 1;
 }
 
 .nav-label {
@@ -152,11 +153,16 @@ button, button:focus{
   flex-grow: 1; 
   justify-content: center;
   font-size: 1.5rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
 }
+
+.mobile-nav-label
 
 .nav-btn {
   width: 100%;
   border-right: 3px solid black;
+  padding: 1.8rem 0 0 0.3rem;
   color: black;
   font-size: 1.3rem;
   text-align: left;
@@ -195,10 +201,24 @@ button, button:focus{
 }
 
 .ui-btn {
+  /* width: 7rem;
+  height: 2.2rem; */
   background-color: #99ccff;
   border: none;
   border-radius: 1rem;
   font-size: 1.4rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.menu-dropdown-btn {
+}
+
+.mobile-nav {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.2rem;
 }
