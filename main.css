@@ -77,6 +77,11 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header-text {
   background-color: black;
   /* color: #ff9900; */
@@ -317,6 +322,7 @@ ul {
   border-radius: 0.75rem;
   font-size: 1.5rem;
   min-width: 8rem;
+  text-align: center;
 }
 
 .project-link-row {
