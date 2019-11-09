@@ -47,8 +47,16 @@ function handleNextProjectClick() {
   });
 }
 
+function handleWindowChange() {
+  $(window).on('resize', event => {
+    state.screenWidth = $(window).width();
+    state.setBreakpoint(state.screenWidth);
+  });
+}
+
 
 function main() {
+  handleWindowChange();
   handleAboutClick();
   handlePortClick();
   handleContactClick();

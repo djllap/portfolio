@@ -2,11 +2,19 @@
 import state from './state.js';
 
 function generateHeader() {
-  
+  let leftElement = '';
+
+  switch (state.currentBreakpoint) {
+  case state.breakpoints[0]:
+    leftElement = '<div class="nub left-nub"></div>';
+    break;
+  case state.breakpoints[1]:
+    leftElement = '<div class="elbow top-left-elbow"></div>';
+  }
   
   return `
   <header>
-  <div class="nub left-nub"></div>
+  ${leftElement}
   <div class='bar'></div>
   <div class="header-text">
   <span class="title-block">DANIEL KENT</span>
@@ -37,18 +45,31 @@ function generateNavbar() {
 
   return `
     <nav class="nav-bar">
+      <div class="nav-label">MENU</div>
       <button class="nav-btn nav-about-btn ${aboutColor}">ABOUT</button>
       <button class="nav-btn nav-port-btn ${portfolioColor}">PORTFOLIO</button>
       <button class="nav-btn nav-contact-btn ${contactColor}">CONTACT</button>
       <button class="nav-btn red engage">ENGAGE</button>
+      <div class="nav-btn black">empty</div>
+      <div class="nav-bottom"></div>
     </nav>
   `;
 }
 
 function generateFooter() {
+  let leftElement = '';
+
+  switch (state.currentBreakpoint) {
+  case state.breakpoints[0]:
+    leftElement = '<div class="nub left-nub"></div>';
+    break;
+  case state.breakpoints[1]:
+    leftElement = '<div class="elbow bottom-left-elbow"></div>';
+  }
+
   return `
     <footer>
-      <div class="nub left-nub"></div>
+      ${leftElement}
       <div class="bar"></div>
       <div class="nub right-nub"></div>
     </footer>
@@ -222,12 +243,20 @@ function generateMain() {
   `;
 }
 
+function generateBodyContainer() {
+  return `
+    <div class="body-container">
+      ${generateNavbar()}
+      ${generateMain()}
+    </div>
+  `;
+}
+
 function render() {
   let html = '';
   html += 
     generateHeader() +
-    generateNavbar() +
-    generateMain() +
+    generateBodyContainer() +
     generateFooter();
 
   $('body').html(html);

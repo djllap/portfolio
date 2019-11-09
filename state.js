@@ -1,8 +1,9 @@
 import views from './views.js';
 
 let nav = 'about';
-let mediaWidth = window.innerWidth;
-let currentBreakpoint = '';
+const breakpoints = [ 480, 678 ];
+let screenWidth = $(window).width();
+let currentBreakpoint = breakpoints[1];
 
 const projects = [
   { title: 'FLEX NOTEBOOK',
@@ -34,12 +35,25 @@ function setCurrentProject(index) {
   views.render();
 }
 
+function setBreakpoint(width) {
+  if (width < this.breakpoints[1] && this.currentBreakpoint !== this.breakpoints[0]) {
+    this.currentBreakpoint = breakpoints[0];
+    views.render();
+  } else if (width >= this.breakpoints[1] && this.currentBreakpoint !== this.breakpoints[1]) {
+    this.currentBreakpoint = breakpoints[1];
+    views.render();
+  }
+
+}
+
 export default {
   nav,
-  mediaWidth,
   currentBreakpoint,
   projects,
   currentProject,
   currentProjectIndex,
-  setCurrentProject
+  setCurrentProject,
+  breakpoints,
+  setBreakpoint,
+  screenWidth
 };
