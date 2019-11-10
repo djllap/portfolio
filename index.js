@@ -54,6 +54,12 @@ function handleWindowChange() {
   });
 }
 
+function handleEngageClick() {
+  $('body').on('click', '.engage', event => {
+    window.open('https://www.youtube.com/watch?v=sZt6eU5REN8','_blank');
+  });
+}
+
 
 function main() {
   state.setBreakpoint($(window).width());
@@ -63,6 +69,7 @@ function main() {
   handleContactClick();
   handlePrevProjectClick();
   handleNextProjectClick();
+  handleEngageClick();
   views.render();
 }
 

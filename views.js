@@ -243,6 +243,18 @@ function generateContent() {
   `;
 }
 
+// function generateModal() {
+//   const width = $('.modal').width();
+//   const height = width * 0.56;
+//   console.log(width);
+
+//   return `
+//     <div class="modal">
+//       <iframe width=${width} height=${height} src="https://www.youtube.com/embed/sZt6eU5REN8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+//     </div>
+//   `;
+// }
+
 function generateMain() {
   return `
     <main>
