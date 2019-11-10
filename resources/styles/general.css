@@ -10,6 +10,11 @@
 
 html {
   font-family: 'Okuda';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 *, *:before, *:after {
@@ -17,9 +22,10 @@ html {
 }
 
 body{
-  background-color: black;
   min-height: 100vh;
   max-height: 100vh;
+  width: 100%;
+  background-color: black;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -44,6 +50,8 @@ main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -66,6 +74,8 @@ p {
   color: #ff9900;
   font-size: 1.3rem;
   line-height: 1.3;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 button, button:focus{
@@ -218,9 +228,14 @@ a {
 }
 
 .padding-container {
+  margin-top: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  
 }
 
 .body-container {
@@ -228,12 +243,13 @@ a {
   flex: 1;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 90vh;
+  height: 75vh;
 }
 
 .ui-btn {
   padding: 0.5rem;
   border-radius: 1rem;
+  background-color: #f1df6f;
 }
 
 @media only screen and (max-width: 480px) {
@@ -243,9 +259,32 @@ a {
   }
 }
 
-@media only screen and (min-width: 678px) {
+@media only screen and (min-width: 600px) {
   .body-container {
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .padding-container {
+    max-width: 38rem;
+    align-self: center;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  
+  body {
+    min-width: 1200px;
+    max-width: 1200px;
+    margin: auto;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-height: 800px) {
+  .padding-container {
+    justify-content: center;
   }
 }

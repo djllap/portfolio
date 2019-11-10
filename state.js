@@ -1,9 +1,9 @@
 import views from './views.js';
 
 let nav = 'about';
-const breakpoints = [ 480, 678 ];
+const breakpoints = [ 480, 600 ];
 let screenWidth = $(window).width();
-let currentBreakpoint = breakpoints[1];
+let currentBreakpoint = 0;
 
 const projects = [
   { title: 'FLEX NOTEBOOK',
@@ -20,7 +20,7 @@ const projects = [
     imgSrc: 'resources/images/bookmarks.png',
     imgAlt: 'My Bookmarks app capture',
     stack: 'jQuery with Webpack, RESTful API',
-    desc: 'My Bookmarks is an app for organizing your website bookmarks with the options to leave a 1-5 star rating, and to leave comments for yourself for later. It is most useful when conducting research, allowing you to actually close some of your browser tabs.',
+    desc: 'My Bookmarks is an app for organizing your website bookmarks with options to leave a 1-5 star rating, and to leave comments for yourself for later. It is most useful when conducting research, allowing you to actually close some of your browser tabs without worry of forgtting when you don\'t want more permenant bookmarks.',
     liveUrl: 'https://thinkful-ei-iguana.github.io/daniel-bookmarks-app/src/',
     sourceUrl: 'https://github.com/thinkful-ei-iguana/daniel-bookmarks-app'
   }

@@ -50,7 +50,7 @@ function generateNavbar() {
       <button class="nav-btn nav-port-btn ${portfolioColor}">PORTFOLIO</button>
       <button class="nav-btn nav-contact-btn ${contactColor}">CONTACT</button>
       <button class="nav-btn red engage">ENGAGE</button>
-      <div class="nav-btn black">empty</div>
+      <div class="nav-btn empty-nav black"></div>
       <div class="nav-bottom"></div>
     </nav>
   `;
@@ -138,6 +138,9 @@ function generateAbout() {
         Having a passion for learning new things and gaining new skills, Daniel has developed a varied and diverse skillset. He has recieved a master's degree in muisc performance, earned a black belt in Danzan Ryu Jujitsu, built most of the furniture in his home by hand, and is an above average player of the board game, go.
       </p>
       <p>He also makes some pretty cool web apps.</p>
+      <p>
+        Daniel loves to solve problems through programming by developing useful, pragmatic applications. His favorite technologies are Ruby and React, and he loves to design layouts with flexbox (inspect this webpage for proof). 
+      </p>
     </section>`;
 }
 
@@ -151,10 +154,10 @@ function generateProjects() {
       <div class="project-img">
         <header class="project-title">
           <h2>${project.title} 
-            <span class="project-subtitle">
-              ${project.subtitle}
-            </span>
           </h2>
+          <div class="project-subtitle">
+            ${project.subtitle}
+          </div>
         </header>
         <img src=${project.imgSrc} alt=${project.imgAlt}>
       </div>
@@ -178,7 +181,7 @@ function generateProjects() {
           </a>
           
           <a href=${source} class="link-btn yellow" target="_blank">
-            View Source Code
+            Source Code
           </a>
         </div>
       </div>
@@ -190,21 +193,27 @@ function generateContact() {
   return `
     <section class="contact-section">
       <h2 class="contact-title">
-        Subspace communication unavailable. Please initiate contact through the following means:
+        Subspace communications are unavailable. Please initiate contact through the following means:
       </h2>
       <div class="column">
         <ul class="contact-links-list column">
           <li class="contact-link row">
             <span class="contact-btn-label white">Email:</span>
-            <button class="contact-btn blue">Kentpercussion@gmail.com</button>
+            <a class="contact-btn blue" href="mailto: Kentpercussion@gmail.com" target="blank">
+              Kentpercussion@gmail.com
+            </a>
           </li>
           <li class="contact-link row">
             <span class="contact-btn-label white">Github:</span>
-            <button class="contact-btn blue">github.com/djllap</button>
+            <a class="contact-btn blue" href="https://github.com/djllap" target="blank">
+              github.com/djllap
+            </a>
           </li>
           <li class="contact-link row">
             <span class="contact-btn-label white">LinkedIn:</span>
-            <button class="contact-btn blue">linkedin.com/in/danielkent-j</button>
+            <a class="contact-btn blue" href="http://linkedin.com/in/danielkent-j" target="blank">
+              linkedin.com/in/danielkent-j
+            </a>
           </li>
         </ul>
       </div>

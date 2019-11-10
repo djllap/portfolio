@@ -10,15 +10,24 @@
   margin-bottom: 0.5rem;
 }
 
+.project-title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .project-title, .contact-title {
   padding: 0 0 0.5rem 0;
   font-size: 1.6rem;
 }
 
+.project-title h2 {
+  padding-right: 0.5rem;
+}
+
 
 .project-subtitle {
   font-size: 1.3rem;
-  padding-left: 0.5rem;
+  align-self: flex-end;
 }
 
 .project-nav {
@@ -28,8 +37,8 @@
 .link-btn {
   padding: 0.75rem;
   border-radius: 1.5rem;
-  font-size: 1.5rem;
-  min-width: 8rem;
+  font-size: 1.3rem;
+  min-width: 7rem;
   text-align: center;
 }
 
@@ -66,7 +75,7 @@
 }
 
 .bio-header {
-  text-align: center;
+  text-align: left;
   font-size: 1.5rem;
   width: 100%;
   padding-bottom: 0.75rem
@@ -80,6 +89,7 @@
   flex: 1;
   justify-content: center;
   padding-top: 3rem;
+  padding-inline-start: 0;
 }
 
 .contact-link {
@@ -96,7 +106,18 @@
 
 .contact-btn {
   font-size: 1.6rem;
-  border-top-right-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
   padding-right: 0.75rem;
+  padding-left: 0.5rem;
+  padding-top: 0.75rem;
+  min-width: 12rem;
+  text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+  .link-btn {
+    font-size: 1.5rem;
+    min-width: 8rem;
+  }
 }

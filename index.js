@@ -56,6 +56,7 @@ function handleWindowChange() {
 
 
 function main() {
+  state.setBreakpoint($(window).width());
   handleWindowChange();
   handleAboutClick();
   handlePortClick();
