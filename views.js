@@ -105,7 +105,7 @@ function generateAbout() {
   return `
     <section class="profile-row row">
       <div class="pic-column column">
-      <img src="/resources/images/rocketDan.jpg" alt="Rocket Dan Image">
+      <img src="resources/images/rocketDan.jpg" alt="Rocket Dan Image">
       </div>
       <div class="bio-column column">
         <div class="row">
