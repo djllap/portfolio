@@ -69,7 +69,6 @@ function main() {
   handleContactClick();
   handlePrevProjectClick();
   handleNextProjectClick();
-  handleEngageClick();
   views.render();
 }
 

@@ -8,7 +8,7 @@ let currentBreakpoint = 0;
 const projects = [
   { title: 'FLEX NOTEBOOK',
     subtitle: 'A notebook app for martial arts',
-    imgSrc: 'resources/images/flex-notebook-small.png',
+    imgSrc: 'resources/images/Flex-notebook-small.png',
     imgAlt: 'Flex Notebook capture',
     stack: 'Ruby on Rails, React',
     desc: 'Flex notebook arose from a need in Daniel\'s own life. In his jujitsu dojo, he was required to keep a notebook of all the techniques he had learned. Many of these techniques are included in formal \'lists\'. Some techniques fit into multiple categories. Some seemed to belong everywhere and nowwhere. Flex Notebook was designed to make storing and finding these techniques simple and effective.',
