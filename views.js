@@ -138,7 +138,7 @@ function generateAbout() {
       </p>
       <p>He also makes some pretty cool web apps.</p>
       <p>
-        Daniel loves to solve problems through programming by developing useful, pragmatic applications. His favorite technologies are Ruby and React, and he loves to design layouts with flexbox (inspect this webpage for proof). 
+        Daniel loves to solve problems through programming by developing useful, pragmatic applications. His favorite technologies are Ruby and React, and he loves to design layouts with flexbox (inspect this webpage for proof). Daniel likes to work on teams of skilled developers, where he can learn from those with more experience, as well as help those with less.
       </p>
     </section>`;
 }
