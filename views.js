@@ -49,7 +49,6 @@ function generateNavbar() {
       <button class="nav-btn nav-about-btn ${aboutColor}">ABOUT</button>
       <button class="nav-btn nav-port-btn ${portfolioColor}">PORTFOLIO</button>
       <button class="nav-btn nav-contact-btn ${contactColor}">CONTACT</button>
-      <button class="nav-btn red engage">ENGAGE</button>
       <div class="nav-btn empty-nav black"></div>
       <div class="nav-bottom"></div>
     </nav>
