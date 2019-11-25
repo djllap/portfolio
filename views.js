@@ -18,7 +18,7 @@ function generateHeader() {
   <div class='bar'></div>
   <div class="header-text">
   <span class="title-block">DANIEL KENT</span>
-  <span class="title-block dot" value="''"></span>
+  <span class="title-block dot"></span>
   <span class="title-block">FULL STACK DEVELOPER</span>
   </div>
   <div class="nub right-nub"></div>
@@ -158,7 +158,7 @@ function generateProjects() {
             ${project.subtitle}
           </div>
         </header>
-        <img src=${project.imgSrc} alt=${project.imgAlt}>
+        <img src=${project.imgSrc} alt="${project.imgAlt}">
       </div>
       <nav class="project-nav row">
         <button class="ui-btn prev-project-btn white">Previous Project</button>
