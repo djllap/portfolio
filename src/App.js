@@ -12,6 +12,16 @@ class App extends Component {
     windowWidth: 0,
     windowHeight: 0,
     projects: [
+      {
+        title: 'RANGE WIZARD',
+        subtitle: 'Poker hand range manager',
+        imgSrc: './rangeWizard.png',
+        imgAlt: 'Range Wizard capture',
+        stack: 'Node/Express, React',
+        desc: 'Range Wizard allows you to organize related ranges into a single, color-coded chart. The interface is simple and intuitive, so even those without much experience with computers can use Range Wizard without difficulty.',
+        liveUrl: 'https://range-wizard.now.sh/',
+        sourceUrl: 'https://github.com/djllap/range-wizard-client'
+      },
       { 
         title: 'FLEX NOTEBOOK',
         subtitle: 'A notebook app for martial arts',
@@ -24,7 +34,7 @@ class App extends Component {
       },
       { title: 'MY BOOKMARKS',
         subtitle: 'Organize your favorite websites',
-        imgSrc: 'resources/images/bookmarks.png',
+        imgSrc: './bookmarks.png',
         imgAlt: 'My Bookmarks app capture',
         stack: 'jQuery with Webpack, RESTful API',
         desc: 'My Bookmarks is an app for organizing your website bookmarks with options to leave a 1-5 star rating, and to leave comments for yourself for later. It is most useful when conducting research, allowing you to actually close some of your browser tabs without worry of forgtting when you don\'t want more permenant bookmarks.',
@@ -49,14 +59,16 @@ class App extends Component {
   }
 
   setProject = (num) => {
+    const currentIndex = this.state.currentProjectIndex;
     let newIndex;
     if (num > 0) {
-      newIndex = num + 1 <= this.state.projects.length ? 
-        num + 1 : 0;
+      newIndex = (currentIndex + 1 < this.state.projects.length) ? 
+        currentIndex + 1 : 0;
     } else if (num < 0) {
-      newIndex = num - 1 >= 0 ? 
-        num - 1 : this.state.projects.length - 1;
+      newIndex = (currentIndex - 1 > 0) ? 
+        currentIndex - 1 : this.state.projects.length - 1;
     }
+    this.setState({currentProjectIndex: newIndex});
   }
 
   render() {

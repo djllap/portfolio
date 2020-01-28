@@ -6,45 +6,45 @@ export default function Projects(props) {
 
   return (
     <div className="padding-container">
-      <section class="project-container column">
-        <div class="project-img">
-          <header class="project-title">
+      <section className="project-container column">
+        <div className="project-img">
+          <header className="project-title">
             <h2>{currentProject.title} 
             </h2>
-            <div class="project-subtitle">
+            <div className="project-subtitle">
               {currentProject.subtitle}
             </div>
           </header>
           <img src={require(`${currentProject.imgSrc}`)} alt={currentProject.imgAlt} />
         </div>
-        <nav class="project-nav row">
+        <nav className="project-nav row">
           <button 
-            class="ui-btn prev-project-btn white" 
+            className="ui-btn prev-project-btn white" 
             onClick={() => props.setProject(-1)}
           >
             Previous Project
           </button>
           <button 
-            class="ui-btn next-project-btn white"
+            className="ui-btn next-project-btn white"
             onClick={() => props.setProject(1)}
           >
             Next Project
           </button>
         </nav>
         
-        <div class="project-details">
+        <div className="project-details">
           <p>
-            <span class="label">STACK:</span>
+            <span className="label">STACK:</span>
             ${currentProject.stack}
           </p>
           <p>
-            <span class="label">DESCRIPTION:</span>
+            <span className="label">DESCRIPTION:</span>
             ${currentProject.desc}
           </p>
-          <div class="project-link-row row">
+          <div className="project-link-row row">
             <a 
               href={currentProject.liveUrl} 
-              class="link-btn blue" 
+              className="link-btn blue" 
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -53,7 +53,7 @@ export default function Projects(props) {
             
             <a 
               href={currentProject.sourceUrl} 
-              class="link-btn yellow" 
+              className="link-btn yellow" 
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -71,3 +71,4 @@ Projects.propTypes = {
   currentProjectIndex: PropTypes.number.isRequired,
   setProject: PropTypes.func.isRequired
 };
+
