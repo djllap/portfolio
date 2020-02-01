@@ -35,11 +35,11 @@ export default function Projects(props) {
         <div className="project-details">
           <p>
             <span className="label">STACK:</span>
-            ${currentProject.stack}
+            {currentProject.stack}
           </p>
           <p>
             <span className="label">DESCRIPTION:</span>
-            ${currentProject.desc}
+            {currentProject.desc}
           </p>
           <div className="project-link-row row">
             <a 
