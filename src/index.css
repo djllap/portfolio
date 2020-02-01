@@ -1,9 +1,11 @@
+@import './normalize.css';
+
 @font-face {
   font-family:"Okuda";
   src:url("Okuda.eot?") format("eot"),
-  url("/portfolio/resources/fonts/Okuda.woff") format("woff"),
-  url("/portfolio/resources/fonts/Okuda.ttf") format("truetype"),
-  url("/portfolio/resources/fonts/Okuda.svg#Okuda") format("svg");
+  url("./Okuda.woff") format("woff"),
+  url("./Okuda.ttf") format("truetype"),
+  url("./Okuda.svg#Okuda") format("svg");
   font-weight:normal;
   font-style:normal;
 }
@@ -61,6 +63,7 @@ h1 {
   font-weight: inherit;
   margin-top: 1.5rem;
   font-size: 3rem;
+  margin: 0;
 }
 
 h2 {
@@ -90,6 +93,14 @@ ul {
 a {
   text-decoration: none;
   color: black;
+}
+
+.root {
+  height: 100vh
+}
+
+.App {
+  height: 100vh;
 }
 
 .header-text {
@@ -242,7 +253,7 @@ a {
   flex: 1;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 75vh;
+  height: calc(100vh - 10rem);
 }
 
 .ui-btn {
@@ -285,5 +296,199 @@ a {
 @media only screen and (min-height: 800px) {
   .padding-container {
     justify-content: center;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-label {
+  background-color: #f1df6f;
+  width: 100%;
+  color: black;
+  display: flex;
+  align-items: flex-end;
+  flex: 2; 
+  justify-content: center;
+  font-size: 1.5rem;
+  padding-bottom: 2.5rem;
+  display: none;
+}
+
+.nav-btn {
+  width: 100%;
+  border-right: 3px solid black;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: black;
+  font-size: 1.3rem;
+  text-align: left;
+  flex: 1;
+}
+
+.engage {
+  font-size: 1.4rem;
+  border: none;
+}
+
+.nav-bottom {
+  background-color: #f1df6f;
+  width: 100%;
+  flex-grow: 1; 
+  flex-basis: 5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-bar {
+    width: 9rem;
+    padding: 0 0 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-label {
+    display: flex;
+    border-bottom: 3px solid black;
+  }
+
+  .nav-btn {
+    border-right: none;
+    border-bottom: 3px solid black;
+    max-height: 4.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .nav-btn {
+    padding: 1.8rem 0 0 0.3rem;
+  }
+}
+
+.project-img {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.project-img img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: scale-down;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-title, .contact-title {
+  padding: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+}
+
+.project-title h2 {
+  padding-right: 0.5rem;
+}
+
+
+.project-subtitle {
+  font-size: 1.3rem;
+  align-self: flex-end;
+}
+
+.project-nav {
+  justify-content: space-between;
+}
+
+.link-btn {
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  font-size: 1.3rem;
+  min-width: 7rem;
+  text-align: center;
+}
+
+.prev-project-btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.next-project-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.project-link-row {
+  margin-bottom: 1rem;
+  justify-content: space-around;
+}
+
+.pic-column {
+  width: 45%;
+  max-height: 14rem;
+}
+
+.pic-column img {
+  object-fit: scale-down;
+  width: 100%;
+  max-height: 100%;
+}
+
+.bio-column {
+  padding-left: 0.75rem;
+  font-size: 1.2rem;
+  width: 55%
+}
+
+.bio-header {
+  text-align: left;
+  font-size: 1.5rem;
+  width: 100%;
+  padding-bottom: 0.75rem
+}
+
+.contact-section {
+  height: 100%
+}
+
+.contact-links-list {
+  flex: 1;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-inline-start: 0;
+}
+
+.contact-link {
+  padding-bottom: 1rem;
+}
+
+.contact-btn-label {
+  padding: 0.75rem;
+  color: black;
+  min-width: 5rem;
+  margin-right: 0.25rem;
+  font-size: 1.6rem;
+}
+
+.contact-btn {
+  font-size: 1.6rem;
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+  padding-right: 0.75rem;
+  padding-left: 0.5rem;
+  padding-top: 0.75rem;
+  min-width: 12rem;
+  text-align: left;
+}
+
+@media only screen and (min-width: 600px) {
+  .link-btn {
+    font-size: 1.5rem;
+    min-width: 8rem;
   }
 }
