@@ -1,5 +1,5 @@
 import React from 'react';
-import rocketDan from './rocketDan.jpg'
+import headshot from './headshot.jpg'
 
 export default function About(props) {
 
@@ -7,7 +7,7 @@ export default function About(props) {
     <div className="padding-container">
       <section className="profile-row row">
         <div className="pic-column column">
-          <img src={rocketDan} alt="Rocket Dan" />
+          <img src={headshot} alt="head shot" />
         </div>
         <div className="bio-column column">
           <div className="row">
