@@ -1,0 +1,29 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.header-text {
+  background-color: black;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 2rem;
+}
+
+.title-block.dot {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #ff9900;
+  padding: 0;
+}
+
+.title-block {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+

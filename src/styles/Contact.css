@@ -1,0 +1,33 @@
+.contact-section {
+  height: 100%
+}
+
+.contact-links-list {
+  flex: 1;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-inline-start: 0;
+}
+
+.contact-link {
+  padding-bottom: 1rem;
+}
+
+.contact-btn-label {
+  padding: 0.75rem;
+  color: black;
+  min-width: 5rem;
+  margin-right: 0.25rem;
+  font-size: 1.6rem;
+}
+
+.contact-btn {
+  font-size: 1.6rem;
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+  padding-right: 0.75rem;
+  padding-left: 0.5rem;
+  padding-top: 0.75rem;
+  min-width: 12rem;
+  text-align: left;
+}

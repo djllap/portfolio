@@ -15,7 +15,7 @@ export default function Projects(props) {
               {currentProject.subtitle}
             </div>
           </header>
-          <img src={require(`${currentProject.imgSrc}`)} alt={currentProject.imgAlt} />
+          <img src={currentProject.imgSrc} alt={currentProject.imgAlt} />
         </div>
         <nav className="project-nav row">
           <button 
