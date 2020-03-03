@@ -1,6 +1,7 @@
 import rangeWizardPic from './imgs/rangeWizard.png';
 import flexNotebookPic from './imgs/Flex-notebook-small.png';
 import langLearnPic from './imgs/lang-learn.png';
+import digiDoodlePic from './imgs/digi-doodle.png';
 
 export default [
   {
@@ -23,7 +24,7 @@ export default [
     liveUrl: 'http://www.flex-notebook.com/',
     sourceUrl: 'https://github.com/djllap/kata'
   },
-  { title: 'Lang-Learn',
+  { title: 'LANG-LEARN',
     subtitle: 'Learning through spaced repetition',
     imgSrc: langLearnPic,
     imgAlt: 'Lang-Learn capture',
@@ -31,5 +32,14 @@ export default [
     desc: 'Lang-Learn is a language learning tool that uses the popular spaced repetition strategy. It uses a scoring algorithm and linked lists to determine the sequence of words to be reviewed. Daniel was the principal front-end developer, with Javier Zapien developing the API.',
     liveUrl: 'https://lang-learn.now.sh/',
     sourceUrl: 'https://github.com/djllap/lang-learn'
+  },
+  { title: 'DIGI-DOODLE',
+    subtitle: 'Online Pictionary',
+    imgSrc: digiDoodlePic,
+    imgAlt: 'digi-doodle capture',
+    stack: 'Node/Express, React, Socket.io',
+    desc: 'Digi-doodle is a way to play Pictionary online with your friends and strangers. After choosing a username, you are directed into the first available game lobby, where You take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas.',
+    liveUrl: 'https://digi-doodle.now.sh/',
+    sourceUrl: 'https://github.com/djllap/digi-doodle-client'
   }
 ]

@@ -83,6 +83,7 @@ class App extends Component {
         <span id='preload-img-1' />
         <span id='preload-img-2' />
         <span id='preload-img-3' />
+        <span id='preload-img-4' />
         <Header 
           breakpoints={this.state.breakpoints}
           width={this.state.windowWidth}
