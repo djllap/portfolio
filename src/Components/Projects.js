@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Projects(props) {
-  const currentProject = props.projects[props.currentProjectIndex]
+  const currentProject = props.projects[props.currentProjectIndex];
 
   return (
     <div className="padding-container">
@@ -15,7 +15,10 @@ export default function Projects(props) {
               {currentProject.subtitle}
             </div>
           </header>
-          <img src={currentProject.imgSrc} alt={currentProject.imgAlt} />
+          <img 
+            src={currentProject.imgSrc} 
+            alt={currentProject.imgAlt}
+          />
         </div>
         <nav className="project-nav row">
           <button 

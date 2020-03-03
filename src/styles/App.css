@@ -1,3 +1,15 @@
 .App {
   height: 100vh;
 }
+
+#preload-img-1 {
+  background: url("../imgs/rangeWizard.png") no-repeat -10000px -10000px;
+}
+
+#preload-img-2 {
+  background: url("../imgs/Flex-notebook-small.png") no-repeat -10000px -10000px;
+}
+
+#preload-img-3 {
+  background: url("../imgs/lang-learn.png") no-repeat -10000px -10000px;
+}

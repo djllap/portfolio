@@ -1,6 +1,9 @@
 .pic-column {
   width: 45%;
   max-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pic-column img {
