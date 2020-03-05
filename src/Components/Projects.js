@@ -1,13 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import Thumbnails from './Thumbnails';
+import projects from '../projectData';
 
 export default function Projects(props) {
-  const currentProject = props.projects[props.currentProjectIndex];
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const currentProject = projects[currentProjectIndex];
+
+  const nextProject = () => {
+    let newIndex = (currentProjectIndex + 1 < projects.length) ? 
+      currentProjectIndex + 1 : 0;
+    setCurrentProjectIndex(newIndex);
+  }
+
+  const prevProject = () => {
+    let newIndex = (currentProjectIndex + 1 < projects.length) ? 
+      currentProjectIndex + 1 : 0;
+      setCurrentProjectIndex(newIndex);
+  }
 
   return (
     <div className="padding-container">
       <section className="project-container column">
         <div className="project-img">
+          <Thumbnails 
+            currentProjectIndex={currentProjectIndex} 
+            setIndex={setCurrentProjectIndex}
+          />
           <header className="project-title">
             <h2>{currentProject.title} 
             </h2>
@@ -23,13 +41,13 @@ export default function Projects(props) {
         <nav className="project-nav row">
           <button 
             className="ui-btn prev-project-btn white" 
-            onClick={() => props.setProject(-1)}
+            onClick={prevProject}
           >
             Previous Project
           </button>
           <button 
             className="ui-btn next-project-btn white"
-            onClick={() => props.setProject(1)}
+            onClick={nextProject}
           >
             Next Project
           </button>
@@ -69,9 +87,4 @@ export default function Projects(props) {
   );
 }
 
-Projects.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  currentProjectIndex: PropTypes.number.isRequired,
-  setProject: PropTypes.func.isRequired
-};
 

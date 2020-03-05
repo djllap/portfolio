@@ -1,9 +1,6 @@
 @font-face {
   font-family:"Okuda";
-  src:url("../fonts/Okuda.eot") format("eot"),
-  url("../fonts/Okuda.woff") format("woff"),
-  url("../fonts/Okuda.ttf") format("truetype"),
-  url("../fonts/Okuda.svg") format("svg");
+  src: url("../fonts/Okuda.woff") format("woff");
   font-weight:normal;
   font-style:normal;
 }

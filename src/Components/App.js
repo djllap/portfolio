@@ -8,11 +8,9 @@ import projects from '../projectData';
 
 class App extends Component {
   state = {
-    page: 'about',
     breakpoints: [600],
     windowWidth: 0,
     windowHeight: 0,
-    currentProjectIndex: 0,
   }
 
   componentDidMount = () => {
@@ -26,19 +24,6 @@ class App extends Component {
 
   updateWindowDimensions = () => {
     this.setState({windowWidth: window.innerWidth, windowHeight: window.innerHeight})
-  }
-
-  setProject = (num) => {
-    const currentIndex = this.state.currentProjectIndex;
-    let newIndex;
-    if (num > 0) {
-      newIndex = (currentIndex + 1 < projects.length) ? 
-        currentIndex + 1 : 0;
-    } else if (num < 0) {
-      newIndex = (currentIndex - 1 > 0) ? 
-        currentIndex - 1 : projects.length - 1;
-    }
-    this.setState({currentProjectIndex: newIndex});
   }
 
   render() {
@@ -91,8 +76,6 @@ class App extends Component {
         <div className="body-container">
           {NavbarRoutes}
           <Content 
-            projects={projects}
-            currentProjectIndex={this.state.currentProjectIndex}
             setProject={this.setProject}
           />
         </div>

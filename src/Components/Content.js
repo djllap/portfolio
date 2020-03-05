@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import TitleCard from './TitleCard'
 import About from './About';
 import Projects from './Projects';
@@ -39,7 +38,6 @@ export default function Content(props) {
         component={ () => {
           return <Projects 
             projects={props.projects} 
-            currentProjectIndex={props.currentProjectIndex}
             setProject={props.setProject}
           /> }}
       />
@@ -56,10 +54,4 @@ export default function Content(props) {
       {contentRoutes}
     </main>
   )
-}
-
-Content.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  currentProjectIndex: PropTypes.number.isRequired,
-  setProject: PropTypes.func.isRequired,
 }
