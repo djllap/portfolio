@@ -1,9 +1,18 @@
-.pic-column {
-  width: 45%;
-  max-height: 14rem;
+.about-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+
+.profile-row {
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+}
+
+.pic-column {
+  max-width: 14rem;
 }
 
 .pic-column img {
@@ -13,15 +22,42 @@
 }
 
 .bio-column {
-  padding-left: 0.75rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
-  width: 55%
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
 }
 
 .bio-header {
-  text-align: left;
+  text-align: center;
   font-size: 1.8rem;
   width: 100%;
-  padding-bottom: 0.75rem
+  padding-bottom: 0.75rem;
 }
 
+.full-bio {
+  padding: 1rem 0.5rem 0 0.5rem;
+  max-width: 600px;
+}
+
+@media only screen and (min-width: 425px) {
+  .profile-row {
+    flex-direction: row;
+  }
+
+  .pic-column {
+    width: 45%;
+    max-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .bio-column {
+    padding-left: 0.75rem;
+    width: 55%;
+    margin: 0;
+  }
+}
