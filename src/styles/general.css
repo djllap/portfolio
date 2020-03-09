@@ -22,8 +22,15 @@ time, mark, audio, video {
 @font-face {
   font-family:"Okuda";
   src: url("../fonts/Okuda.woff") format("woff");
-  font-weight:normal;
-  font-style:normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Okuda2';
+  src: url("../fonts/okuda2.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
 }
 
 html {
@@ -111,6 +118,10 @@ ul {
 a {
   text-decoration: none;
   color: black;
+}
+
+.at {
+  font-family: 'Okuda2';
 }
 
 .elbow {
