@@ -77,6 +77,7 @@ class App extends Component {
           {NavbarRoutes}
           <Content 
             setProject={this.setProject}
+            width={this.state.windowWidth}
           />
         </div>
         <Footer 

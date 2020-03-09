@@ -4,7 +4,7 @@ import headshot from '../imgs/headshot.jpg'
 export default function About(props) {
 
   return (
-    <div className="padding-container">
+    <div>
       <section className="profile-row row">
         <div className="pic-column column">
           <img src={headshot} alt="head shot" />

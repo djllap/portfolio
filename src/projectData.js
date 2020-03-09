@@ -12,7 +12,8 @@ export default [
     stack: 'Node/Express, React',
     desc: 'Range Wizard allows you to organize related ranges into a single, color-coded chart. The interface is simple and intuitive, so even those without much experience with computers can use Range Wizard without difficulty.',
     liveUrl: 'https://www.range-wizard.com/',
-    sourceUrl: 'https://github.com/djllap/range-wizard-client'
+    sourceUrl: 'https://github.com/djllap/range-wizard-client',
+    serverUrl: 'https://github.com/djllap/range-wizard-api'
   },
   { 
     title: 'FLEX NOTEBOOK',
@@ -22,7 +23,7 @@ export default [
     stack: 'Ruby on Rails, React',
     desc: 'Flex notebook arose from a need in Daniel\'s own life. In his jujitsu dojo, he was required to keep a notebook of all the techniques he had learned. Many of these techniques are included in formal \'lists\'. Some techniques fit into multiple categories. Some seemed to belong everywhere and nowwhere. Flex Notebook was designed to make storing and finding these techniques simple and effective.',
     liveUrl: 'http://www.flex-notebook.com/',
-    sourceUrl: 'https://github.com/djllap/kata'
+    sourceUrl: 'https://github.com/djllap/kata',
   },
   { title: 'LANG-LEARN',
     subtitle: 'Learning through spaced repetition',
@@ -40,6 +41,7 @@ export default [
     stack: 'Node/Express, React, Socket.io',
     desc: 'Digi-doodle is a way to play Pictionary online with your friends and strangers. After choosing a username, you are directed into the first available game lobby, where You take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas.',
     liveUrl: 'https://digi-doodle.now.sh/',
-    sourceUrl: 'https://github.com/djllap/digi-doodle-client'
+    sourceUrl: 'https://github.com/djllap/digi-doodle-client',
+    serverUrl: 'https://github.com/djllap/digi-doodle-server'
   }
 ]

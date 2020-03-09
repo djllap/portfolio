@@ -39,6 +39,7 @@ export default function Content(props) {
           return <Projects 
             projects={props.projects} 
             setProject={props.setProject}
+            width={props.width}
           /> }}
       />
       <Route

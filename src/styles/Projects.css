@@ -1,37 +1,53 @@
 .ui-btn {
   padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: #f1df6f;
+  border-radius: 1.3rem;
+  font-family: 'Okuda';
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .prev-project-btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  padding-left: 1rem;
+  margin-right: 0.2rem;
 }
 
 .next-project-btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  padding-right: 1rem;
+  margin-left: 0.2rem;
 }
 
 .project-img {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-img img {
-  width: 100%;
   max-height: 20rem;
   object-fit: scale-down;
-  margin-bottom: 0.5rem;
+}
+
+.curr-project-img {
+  width: 100%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  align-self: center;
 }
 
 .project-title {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  font-size: 1.6rem;
+  color: black;
 }
 
-.project-title, .contact-title {
+.contact-title {
   padding: 0 0 0.5rem 0;
   font-size: 1.6rem;
 }
@@ -40,17 +56,21 @@
   padding-right: 0.5rem;
 }
 
-
 .project-subtitle {
   font-size: 1.3rem;
   align-self: flex-end;
 }
 
 .project-nav {
+  flex-wrap: nowrap;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .project-link-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   justify-content: space-around;
 }
@@ -59,13 +79,47 @@
   padding: 0.75rem;
   border-radius: 1.5rem;
   font-size: 1.3rem;
-  min-width: 7rem;
+  min-width: 16rem;
+  align-self: center;
   text-align: center;
+  margin: 0 0.5rem 0.75rem 0.5rem;
 }
 
-@media only screen and (min-width: 600px) {
+.project-details {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media only screen and (min-width: 464px) {
+  .project-link-row {
+    flex-direction: row;
+  }
+
   .link-btn {
     font-size: 1.5rem;
     min-width: 8rem;
+  }
+}
+
+@media only screen and (min-width: 774px) {
+  .project-details {
+    width: 600px;
+    align-self: center;
+  }
+
+  .project-img {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .curr-project-img {
+    width: inherit;
+  }
+}
+
+@media only screen and (min-width: 874px) {
+  .project-nav {
+    width: 700px;
+    align-self: center;
   }
 }
