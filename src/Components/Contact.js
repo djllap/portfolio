@@ -11,7 +11,7 @@ export default function Contact() {
         <ul className="contact-links-list column">
           <li className="contact-link row">
             <span className="contact-btn-label white">Email:</span>
-            <a className="contact-btn blue" href="mailto: Kentpercussion@gmail.com" target="blank">
+            <a className="contact-btn blue" href="mailto:kentpercussion@gmail.com" target="blank">
               Kentpercussion<span className="at">@</span>gmail.com
             </a>
           </li>

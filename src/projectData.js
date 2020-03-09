@@ -21,7 +21,7 @@ export default [
     imgSrc: flexNotebookPic,
     imgAlt: 'Flex Notebook capture',
     stack: 'Ruby on Rails, React',
-    desc: 'Flex notebook arose from a need in Daniel\'s own life. In his jujitsu dojo, he was required to keep a notebook of all the techniques he had learned. Many of these techniques are included in formal \'lists\'. Some techniques fit into multiple categories. Some seemed to belong everywhere and nowwhere. Flex Notebook was designed to make storing and finding these techniques simple and effective.',
+    desc: 'Flex notebook arose from a need in Daniel\'s own life. In his jujitsu dojo, he was required to keep a notebook of all the techniques he had learned. Many of these techniques are included in formal \'lists\'. Some techniques fit into multiple categories. Some seemed to belong everywhere and nowhere. Flex Notebook was designed to make storing and finding these techniques simple and effective.',
     liveUrl: 'http://www.flex-notebook.com/',
     sourceUrl: 'https://github.com/djllap/kata',
   },
@@ -39,7 +39,7 @@ export default [
     imgSrc: digiDoodlePic,
     imgAlt: 'digi-doodle capture',
     stack: 'Node/Express, React, Socket.io',
-    desc: 'Digi-doodle is a way to play Pictionary online with your friends and strangers. After choosing a username, you are directed into the first available game lobby, where You take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas.',
+    desc: 'Digi-doodle is a way to play Pictionary online with your friends and strangers. After choosing a username, you are directed into the first available game lobby, where you take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas.',
     liveUrl: 'https://digi-doodle.now.sh/',
     sourceUrl: 'https://github.com/djllap/digi-doodle-client',
     serverUrl: 'https://github.com/djllap/digi-doodle-server'

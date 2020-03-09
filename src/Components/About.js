@@ -37,7 +37,7 @@ export default function About(props) {
       </section>
       <section className="full-bio column">
         <p>
-          Having a passion for learning new things and gaining new skills, Daniel has developed a varied and diverse skillset. He has received a master's degree in music performance, earned a black belt in Danzan Ryu Jujitsu, built most of the furniture in his home by hand, and is pretty decent at both poker and go.
+          Having a passion for learning new things and gaining new skills, Daniel has developed a varied and diverse skill set. He has received a master's degree in music performance, earned a black belt in Danzan Ryu Jujitsu, built most of the furniture in his home by hand, and is pretty decent at both poker and go.
         </p>
         <p>He also makes some pretty cool web apps.</p>
         <p>
