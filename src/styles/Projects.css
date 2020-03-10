@@ -22,7 +22,6 @@
 
 .project-img {
   display: flex;
-  display: -webkit-flex;
   flex-direction: column;
 }
 
@@ -40,7 +39,6 @@
 
 .project-title {
   display: flex;
-  display: -webkit-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
