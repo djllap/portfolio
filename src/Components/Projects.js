@@ -15,8 +15,8 @@ export default function Projects(props) {
   }
 
   const prevProject = () => {
-    let newIndex = (currentProjectIndex + 1 < projects.length) ? 
-      currentProjectIndex - 1 : 0;
+    let newIndex = (currentProjectIndex - 1 >= 0) ? 
+      currentProjectIndex - 1 : projects.length - 1;
       setCurrentProjectIndex(newIndex);
   }
 
