@@ -26,6 +26,13 @@ export default function Projects(props) {
   }
 
   useEffect(() => {
+    // clear Project detail text when project changes
+    setProjectSummaryText('');
+    setProjectStackText('');
+    setProjectDescText('');
+  }, [currentProjectIndex]);
+
+  useEffect(() => {
     // Typrewriter animation for Project Summary
     let typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
     return () => clearInterval(typeSummary)
@@ -44,7 +51,7 @@ export default function Projects(props) {
     // Typewriter animation for Project Description
     let typeDesc;
     if (projectStackText === currentProject.stack) {
-      typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay);
+      typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay/2);
     }
     return () => clearInterval(typeDesc);
   }, [currentProject.stack, projectStackText]);
@@ -63,85 +70,91 @@ export default function Projects(props) {
 
 
   return (
-    <section className="project-container column">
-        <Flipper flipKey={currentProjectIndex}>
-          <div className="project-img">
-            <Thumbnails 
-              currentProjectIndex={currentProjectIndex}
-              setIndex={setCurrentProjectIndex}
-              width={props.width}
+    <Flipper flipKey={currentProjectIndex}>
+      <section className="project-container column">
+        <div className="project-img">
+          <Thumbnails 
+            currentProjectIndex={currentProjectIndex}
+            setIndex={setCurrentProjectIndex}
+            width={props.width}
+          />
+          <Flipped flipId={`current-${currentProjectIndex}`}>
+            <img 
+              className="curr-project-img"
+              src={currentProject.imgSrc} 
+              alt={currentProject.imgAlt}
             />
-              <Flipped flipId={`current-${currentProjectIndex}`}>
-                <img 
-                  className="curr-project-img"
-                  src={currentProject.imgSrc} 
-                  alt={currentProject.imgAlt}
-                />
-              </Flipped>
-          </div>
-        </Flipper>
-      <nav className="project-nav row">
-        <button 
-          className="ui-btn prev-project-btn blue" 
-          onClick={prevProject}
-        >
-          PREV
-        </button>
-        <header className="project-title white">
-          <h2>{currentProject.title}</h2>
-        </header>
-        <button 
-          className="ui-btn next-project-btn blue"
-          onClick={nextProject}
-        >
-          NEXT
-        </button>
-      </nav>
-      
-      <div className="project-details">
-        <p>
-          <span className="label">SUMMARY:</span>
-          {projectSummaryText}
-        </p>
-        <p>
-          <span className="label">STACK:</span>
-          {projectStackText}
-        </p>
-        <p>
-          <span className="label">DESCRIPTION:</span>
-          {projectDescText}
-        </p>
-        <div className="project-link-row">
-          <a 
-            href={currentProject.liveUrl} 
-            className="link-btn blue" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          </Flipped>
+        </div>
+        
+        <nav className="project-nav row">
+          <button 
+            className="ui-btn prev-project-btn blue" 
+            onClick={prevProject}
           >
-            Live App
-          </a>
-            <a 
-              href={currentProject.sourceUrl} 
-              className="link-btn yellow" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {(!currentProject.serverUrl) ? 'Source Code' : 'Client Code'}
-            </a>
-            {(currentProject.serverUrl) ? (
+            PREV
+          </button>
+          <header className="project-title white">
+            <h2>{currentProject.title}</h2>
+          </header>
+          <button 
+            className="ui-btn next-project-btn blue"
+            onClick={nextProject}
+          >
+            NEXT
+          </button>
+        </nav>
+      
+        <div className="project-details">
+          <p>
+            <span className="label">SUMMARY:</span>
+            {projectSummaryText}
+          </p>
+          <p>
+            <span className="label">STACK:</span>
+            {projectStackText}
+          </p>
+          <p>
+            <span className="label">DESCRIPTION:</span>
+            {projectDescText}
+          </p>
+          <div className="project-link-row">
+            <Flipped flipId='live-app'>
               <a 
-                href={currentProject.serverUrl}
-                className='link-btn yellow'
+                href={currentProject.liveUrl} 
+                className="link-btn blue" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Live App
+              </a>
+            </Flipped>
+            <Flipped flipId="client-code">
+              <a 
+                href={currentProject.sourceUrl} 
+                className="link-btn yellow" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Server Code
+                {(!currentProject.serverUrl) ? 'Source Code' : 'Client Code'}
               </a>
+            </Flipped>
+            {(currentProject.serverUrl) ? (
+              <Flipped flipId="server-code">
+                <a 
+                  href={currentProject.serverUrl}
+                  className='link-btn yellow'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Server Code
+                </a>
+              </Flipped>
             ) : ''}
-
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Flipper>
   );
 }
 
