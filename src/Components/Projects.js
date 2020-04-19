@@ -1,12 +1,53 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Flipper, Flipped } from 'react-flip-toolkit';
 import Thumbnails from './Thumbnails';
 import projects from '../projectData';
 
 export default function Projects(props) {
-  const imgRef = useRef(null);
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const currentProject = projects[currentProjectIndex];
+  const [projectSummaryText, setProjectSummaryText] = useState('');
+  const [projectStackText, setProjectStackText] = useState('');
+  const [projectDescText, setProjectDescText] = useState('');
+  const typingDelay = 10;
+
+  const typeStateString = (finalString, setStateFunc, msDelay) => {
+    let finalStringIndex = 0;
+    let stateString = '';
+    setStateFunc(stateString);
+
+    const typeInterval = setInterval(() => {
+      stateString += finalString[finalStringIndex++];
+      setStateFunc(stateString);
+      if (finalStringIndex >= finalString.length) clearInterval(typeInterval);
+    }, msDelay);
+    return typeInterval;
+  }
+
+  useEffect(() => {
+    // Typrewriter animation for Project Summary
+    let typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
+    return () => clearInterval(typeSummary)
+  }, [currentProject.subtitle]);
+
+  useEffect(() => {
+    // Typewriter animation for Project Stack
+    let typeStack;
+    if (projectSummaryText === currentProject.subtitle) {
+      typeStack = typeStateString(currentProject.stack, setProjectStackText, typingDelay);
+    }
+    return () => clearInterval(typeStack);
+  }, [currentProject.stack, projectSummaryText]);
+
+  useEffect(() => {
+    // Typewriter animation for Project Description
+    let typeDesc;
+    if (projectStackText === currentProject.stack) {
+      typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay);
+    }
+    return () => clearInterval(typeDesc);
+  }, [currentProject.stack, projectStackText]);
 
   const nextProject = () => {
     let newIndex = (currentProjectIndex + 1 < projects.length) ? 
@@ -20,23 +61,25 @@ export default function Projects(props) {
       setCurrentProjectIndex(newIndex);
   }
 
+
   return (
     <section className="project-container column">
-      <div className="project-img">
-        <Thumbnails 
-          currentProjectIndex={currentProjectIndex} 
-          setIndex={setCurrentProjectIndex}
-          imgRef={imgRef}
-          width={props.width}
-        />
-        
-        <img 
-          ref={imgRef}
-          className="curr-project-img"
-          src={currentProject.imgSrc} 
-          alt={currentProject.imgAlt}
-        />
-      </div>
+        <Flipper flipKey={currentProjectIndex}>
+          <div className="project-img">
+            <Thumbnails 
+              currentProjectIndex={currentProjectIndex}
+              setIndex={setCurrentProjectIndex}
+              width={props.width}
+            />
+              <Flipped flipId={`current-${currentProjectIndex}`}>
+                <img 
+                  className="curr-project-img"
+                  src={currentProject.imgSrc} 
+                  alt={currentProject.imgAlt}
+                />
+              </Flipped>
+          </div>
+        </Flipper>
       <nav className="project-nav row">
         <button 
           className="ui-btn prev-project-btn blue" 
@@ -46,9 +89,6 @@ export default function Projects(props) {
         </button>
         <header className="project-title white">
           <h2>{currentProject.title}</h2>
-          {/* <div className="project-subtitle">
-            {currentProject.subtitle}
-          </div> */}
         </header>
         <button 
           className="ui-btn next-project-btn blue"
@@ -61,15 +101,15 @@ export default function Projects(props) {
       <div className="project-details">
         <p>
           <span className="label">SUMMARY:</span>
-          {currentProject.subtitle}
+          {projectSummaryText}
         </p>
         <p>
           <span className="label">STACK:</span>
-          {currentProject.stack}
+          {projectStackText}
         </p>
         <p>
           <span className="label">DESCRIPTION:</span>
-          {currentProject.desc}
+          {projectDescText}
         </p>
         <div className="project-link-row">
           <a 
