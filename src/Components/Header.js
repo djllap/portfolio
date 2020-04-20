@@ -1,14 +1,11 @@
 import React from 'react';
 
 export default function Header(props) {
-  let leftElement = props.width >= props.breakpoints[0] ?
-    <div className="elbow top-left-elbow"></div>
-    :
-    <div className="nub left-nub"></div>;
   
   return (
     <header>
-      {leftElement}
+      <div className="elbow top-left-elbow large-only"></div>
+      <div className="nub left-nub small-only"></div>
       <div className='bar'></div>
       <div className="header-text">
       <span className="title-block">DANIEL KENT</span>

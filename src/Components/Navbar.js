@@ -8,22 +8,17 @@ export default function Navbar(props) {
   let contactColor = 'white';
   
   switch (props.page) {
-  case 'about':
-    aboutColor = 'blue';
-    break;
-  case 'projects':
-    portfolioColor = 'blue';
-    break;
-  case 'contact':
-    contactColor = 'blue';
-    break;
-  default: break }
-
-  const emptyNav = props.width >= props.breakpoints[0] ?
-    <div className="nav-btn empty-nav black" /> : '';
-  const navBottom = props.width >= props.breakpoints[0] ?
-    <div className="nav-bottom" /> : '';
-  
+    case 'about':
+      aboutColor = 'blue';
+      break;
+    case 'projects':
+      portfolioColor = 'blue';
+      break;
+    case 'contact':
+      contactColor = 'blue';
+      break;
+    default: break 
+  }  
 
   return (
     <nav className="nav-bar">
@@ -43,14 +38,12 @@ export default function Navbar(props) {
       >
         CONTACT
       </Link>
-      {emptyNav}
-      {navBottom}
+      <div className="nav-btn empty-nav black large-only" />
+      <div className="nav-bottom large-only" /> 
     </nav>
   );
 }
 
 Navbar.propTypes = {
   page: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  breakpoints: PropTypes.arrayOf(PropTypes.number).isRequired
 }

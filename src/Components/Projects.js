@@ -14,29 +14,22 @@ export default function Projects(props) {
 
   const typeStateString = (finalString, setStateFunc, msDelay) => {
     let finalStringIndex = 0;
-    let stateString = '';
-    setStateFunc(stateString);
 
     const typeInterval = setInterval(() => {
-      stateString += finalString[finalStringIndex++];
-      setStateFunc(stateString);
+      setStateFunc(stateString => stateString + finalString[finalStringIndex++]);
       if (finalStringIndex >= finalString.length) clearInterval(typeInterval);
     }, msDelay);
     return typeInterval;
   }
 
   useEffect(() => {
-    // clear Project detail text when project changes
+    // Typrewriter animation for Project Summary
     setProjectSummaryText('');
     setProjectStackText('');
     setProjectDescText('');
-  }, [currentProjectIndex]);
-
-  useEffect(() => {
-    // Typrewriter animation for Project Summary
-    let typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
+    const typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
     return () => clearInterval(typeSummary)
-  }, [currentProject.subtitle]);
+  }, [currentProject]);
 
   useEffect(() => {
     // Typewriter animation for Project Stack
@@ -45,7 +38,7 @@ export default function Projects(props) {
       typeStack = typeStateString(currentProject.stack, setProjectStackText, typingDelay);
     }
     return () => clearInterval(typeStack);
-  }, [currentProject.stack, projectSummaryText]);
+  }, [projectSummaryText, currentProject]);
 
   useEffect(() => {
     // Typewriter animation for Project Description
@@ -54,7 +47,7 @@ export default function Projects(props) {
       typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay/2);
     }
     return () => clearInterval(typeDesc);
-  }, [currentProject.stack, projectStackText]);
+  }, [projectStackText, currentProject]);
 
   const nextProject = () => {
     let newIndex = (currentProjectIndex + 1 < projects.length) ? 
@@ -76,7 +69,6 @@ export default function Projects(props) {
           <Thumbnails 
             currentProjectIndex={currentProjectIndex}
             setIndex={setCurrentProjectIndex}
-            width={props.width}
           />
           <Flipped flipId={`current-${currentProjectIndex}`}>
             <img 
