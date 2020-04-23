@@ -44,7 +44,7 @@ export default function Projects(props) {
     // Typewriter animation for Project Description
     let typeDesc;
     if (projectStackText === currentProject.stack) {
-      typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay/2);
+      typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay/5);
     }
     return () => clearInterval(typeDesc);
   }, [projectStackText, currentProject]);
@@ -106,7 +106,11 @@ export default function Projects(props) {
             <span className="label">STACK:</span>
             {projectStackText}
           </p>
-          <p>
+          <p className="invisible-desc">
+            <span className="label">DESCRIPTION:</span>
+            {currentProject.desc}
+          </p>
+          <p className="visible-desc">
             <span className="label">DESCRIPTION:</span>
             {projectDescText}
           </p>
