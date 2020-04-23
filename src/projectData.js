@@ -10,7 +10,7 @@ export default [
     imgSrc: rangeWizardPic,
     imgAlt: 'Range Wizard capture',
     stack: 'Node/Express, React',
-    desc: 'Range Wizard allows you to organize related ranges into a single, color-coded chart. The interface is simple and intuitive, so even those without much experience with computers can use Range Wizard without difficulty.',
+    desc: 'Range Wizard allows you to organize related ranges into a single, color-coded chart. The intuitive interface makes creating and editing charts a breeze, enabling you to create, edit, and delete multiple ranges with a single form submit.',
     liveUrl: 'https://www.range-wizard.com/',
     sourceUrl: 'https://github.com/djllap/range-wizard-client',
     serverUrl: 'https://github.com/djllap/range-wizard-api'
@@ -30,7 +30,7 @@ export default [
     imgSrc: langLearnPic,
     imgAlt: 'Lang-Learn capture',
     stack: 'Node/Express, React with hooks',
-    desc: 'Lang-Learn is a language learning tool that uses the popular spaced repetition strategy. It uses a scoring algorithm and linked lists to determine the sequence of words to be reviewed. Daniel was the principal front-end developer, with Javier Zapien developing the API.',
+    desc: 'Lang-Learn is a language learning tool that uses the popular spaced repetition strategy. It uses a scoring algorithm and linked lists to determine the sequence of words to be reviewed.',
     liveUrl: 'https://lang-learn.now.sh/',
     sourceUrl: 'https://github.com/djllap/lang-learn'
   },
@@ -39,7 +39,7 @@ export default [
     imgSrc: digiDoodlePic,
     imgAlt: 'digi-doodle capture',
     stack: 'Node/Express, React, Socket.io',
-    desc: 'Digi-doodle is a way to play Pictionary online with your friends and strangers. After choosing a username, you are directed into the first available game lobby, where you take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas.',
+    desc: 'Play Pictionary online with your friends! After choosing a username, you are directed into the first available game lobby, where you take turns drawing and guessing with as many as five other players. Powered by websockets and the HTML5 canvas. Digi-doodle uses cookies to identify players, so if you want to test it by yourself, make sure to use your browser\'s private mode or a different browser for each player.',
     liveUrl: 'https://digi-doodle.now.sh/',
     sourceUrl: 'https://github.com/djllap/digi-doodle-client',
     serverUrl: 'https://github.com/djllap/digi-doodle-server'

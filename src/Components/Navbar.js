@@ -23,21 +23,33 @@ export default function Navbar(props) {
   return (
     <nav className="nav-bar">
       <div className="nav-label">MENU</div>
-      <Link className={`nav-btn nav-about-btn ${aboutColor}`}
-            to='/'
-      >
-        ABOUT
-      </Link>
-      <Link className={`nav-btn nav-port-btn ${portfolioColor}`}
-            to='/projects'
-      >
-        PROJECTS
-      </Link>
-      <Link className={`nav-btn nav-contact-btn ${contactColor}`}
-        to='/contact'
-      >
-        CONTACT
-      </Link>
+      {props.page === 'about' ? 
+        <div className={`nav-btn nav-about-btn ${aboutColor}`}>
+          ABOUT
+        </div>
+        :
+        <Link className={`nav-btn nav-about-btn ${aboutColor}`} to='/'>
+          ABOUT
+        </Link>
+      }
+      {props.page === 'projects' ?
+        <div className={`nav-btn nav-port-btn ${portfolioColor}`}>
+          PROJECTS
+        </div>
+        :
+        <Link className={`nav-btn nav-port-btn ${portfolioColor}`} to='/projects'>
+          PROJECTS
+        </Link>
+      }
+      {props.page === 'contact' ?
+        <div className={`nav-btn nav-contact-btn ${contactColor}`}>
+          CONTACT
+        </div>
+        :
+        <Link className={`nav-btn nav-contact-btn ${contactColor}`} to='/contact'>
+          CONTACT
+        </Link>
+      }
       <div className="nav-btn empty-nav black large-only" />
       <div className="nav-bottom large-only" /> 
     </nav>

@@ -56,6 +56,20 @@ html {
           box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #ff9900;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color:  rgba(255, 153, 0, 0.4)
+}
+
 body{
   min-height: 100vh;
   max-height: 100vh;
@@ -97,6 +111,7 @@ main {
       -ms-flex: 1;
           flex: 1;
   margin-top: -0.5rem;
+  overflow: hidden;
 }
 
 h1 {

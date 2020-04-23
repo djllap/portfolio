@@ -115,8 +115,18 @@
 }
 
 .project-details {
+  position: relative;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.visible-desc {
+  position: absolute;
+  top: 78px;
+}
+
+.invisible-desc {
+  opacity: 0;
 }
 
 @media only screen and (min-width: 464px) {
@@ -129,7 +139,7 @@
 
   .link-btn {
     font-size: 1.5rem;
-    min-width: 8rem;
+    min-width: 7rem;
   }
 }
 
