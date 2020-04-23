@@ -9,29 +9,29 @@ import Contact from './Contact';
 export default function Content(props) {
   const { location } = useContext(__RouterContext);
   const bodyTranstitions = useTransition(location, location => location.pathname, {
-    from: { transform: 'translateX(100%)', opacity: 1 },
-    enter: { transform: 'translateX(0)', opacity: 1 },
-    leave: { transform: 'translateX(-100%)', opacity: 0, position: 'absolute', zIndex: '-1' }
+    from: { transform: 'translateY(100%)', opacity: 1 },
+    enter: { transform: 'translateY(0)', opacity: 1 },
+    leave: { display: 'none' }
   })
 
   const titleCardRoutes = (
-    <>
-      <Route
-        exact
-        path="/"
-        component={() => <TitleCard title="PERSONNEL FILE: DANIEL KENT" />}
-      />
-      <Route
-        exact
-        path="/projects"
-        component={() => <TitleCard title="PROJECTS" />}
-      />
-      <Route
-        exact
-        path="/contact"
-        component={() => <TitleCard title="CONTACT INFORMATION" />}
-      />
-    </>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          component={() => <TitleCard title="PERSONNEL FILE: DANIEL KENT" />}
+        />
+        <Route
+          exact
+          path="/projects"
+          component={() => <TitleCard title="PROJECTS" />}
+        />
+        <Route
+          exact
+          path="/contact"
+          component={() => <TitleCard title="CONTACT INFORMATION" />}
+        />
+      </Switch>
   )
 
   const contentRoutes = bodyTranstitions.map(({item, props, key}) => (

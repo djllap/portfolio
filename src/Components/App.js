@@ -36,6 +36,7 @@ export default function App() {
       <span id='preload-img-2' />
       <span id='preload-img-3' />
       <span id='preload-img-4' />
+      <span id='preload-img-5' />
       <Header />
       <div className="body-container">
         {NavbarRoutes}
