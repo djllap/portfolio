@@ -1,8 +1,9 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
 .contact-section {
-  height: 100%;
+  height: inherit;
   max-width: 600px;
+  margin: auto;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -48,4 +49,8 @@
   padding-top: 0.75rem;
   min-width: 12rem;
   text-align: left;
+}
+
+.contact-title {
+  font-size: 2rem;
 }

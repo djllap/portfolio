@@ -9,7 +9,7 @@ import Contact from './Contact';
 export default function Content(props) {
   const { location } = useContext(__RouterContext);
   const bodyTranstitions = useTransition(location, location => location.pathname, {
-    from: { transform: 'translateY(100%)', opacity: 1 },
+    from: { transform: 'translateY(100vh)', opacity: 1 },
     enter: { transform: 'translateY(0)', opacity: 1 },
     leave: { display: 'none' }
   })
