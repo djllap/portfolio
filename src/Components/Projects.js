@@ -7,9 +7,9 @@ export default function Projects(props) {
 
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const currentProject = projects[currentProjectIndex];
-  const [projectSummaryText, setProjectSummaryText] = useState('');
-  const [projectStackText, setProjectStackText] = useState('');
-  const [projectDescText, setProjectDescText] = useState('');
+  const [projectSummaryText, setProjectSummaryText] = useState(projects[0].subtitle);
+  const [projectStackText, setProjectStackText] = useState(projects[0].stack);
+  const [projectDescText, setProjectDescText] = useState(projects[0].desc);
   const typingDelay = 10;
 
   const typeStateString = (finalString, setStateFunc, msDelay) => {
@@ -24,17 +24,19 @@ export default function Projects(props) {
 
   useEffect(() => {
     // Typrewriter animation for Project Summary
-    setProjectSummaryText('');
-    setProjectStackText('');
-    setProjectDescText('');
-    const typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
-    return () => clearInterval(typeSummary)
+    if (currentProject.subtitle !== projectSummaryText) {
+      setProjectSummaryText('');
+      setProjectStackText('');
+      setProjectDescText('');
+      const typeSummary = typeStateString(currentProject.subtitle, setProjectSummaryText, typingDelay);
+      return () => clearInterval(typeSummary)
+    }
   }, [currentProject]);
 
   useEffect(() => {
     // Typewriter animation for Project Stack
     let typeStack;
-    if (projectSummaryText === currentProject.subtitle) {
+    if (projectSummaryText === currentProject.subtitle && currentProject.stack !== projectStackText) {
       typeStack = typeStateString(currentProject.stack, setProjectStackText, typingDelay);
     }
     return () => clearInterval(typeStack);
@@ -43,7 +45,7 @@ export default function Projects(props) {
   useEffect(() => {
     // Typewriter animation for Project Description
     let typeDesc;
-    if (projectStackText === currentProject.stack) {
+    if (projectStackText === currentProject.stack && currentProject.desc !== projectDescText) {
       typeDesc = typeStateString(currentProject.desc, setProjectDescText, typingDelay/5);
     }
     return () => clearInterval(typeDesc);
