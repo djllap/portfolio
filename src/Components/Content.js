@@ -5,12 +5,13 @@ import TitleCard from './TitleCard'
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
+import '../styles/Content.css'
 
 export default function Content(props) {
   const { location } = useContext(__RouterContext);
   const bodyTranstitions = useTransition(location, location => location.pathname, {
-    from: { transform: 'translateY(100vh)', opacity: 1 },
-    enter: { transform: 'translateY(0)', opacity: 1 },
+    from: { transform: 'translateY(100vh)',  },
+    enter: { transform: 'translateY(0)' },
     leave: { display: 'none' }
   })
 
@@ -63,7 +64,7 @@ export default function Content(props) {
   return (
     <main>
       {titleCardRoutes}
-      <div>
+      <div className="content-container">
         {contentRoutes} 
       </div>
     </main>
